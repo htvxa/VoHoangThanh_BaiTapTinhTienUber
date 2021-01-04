@@ -12,8 +12,12 @@ document.getElementById("tinhTien").onclick = function () {
 	document.getElementById("divThanhTien").style.display = "block";
 };
 
-document.getElementById("hoaDon").onclick = function () {
+document.getElementById("hoaDon").onclick = function (event) {
 	list = checked();
+	if (list == undefined) {
+		console.log(list);
+		event.stopPropagation();
+	};
 	array = giaTien(
 		document.getElementById("distance").value,
 		document.getElementById("time").value,
